@@ -1,23 +1,9 @@
- var budgetController = (function (){
+/***************************************
+        Model Controller
+ ***************************************/
+var budgetController = (function (){
 
-
-     var x = 23;
-
-
-
-     var add = function (a){
-
-       return x + a ;
-
-     }
-
-
-     return {
-         publicTest: function(b){
-             return add(b);
-         }
-     }
-
+    //Some code
 
  }) ();
 
@@ -25,6 +11,11 @@
 
 
 
+
+
+/***************************************
+            View Controller
+ ***************************************/
 var UIController = (function (){
 
     //Some code for later
@@ -35,17 +26,38 @@ var UIController = (function (){
 
 
 
+
+
+/***************************************
+                Controller
+ ***************************************/
 var controller = (function(budgetCtrl,UICtrl){
 
 
+    var ctrlAddItem = function (){
+        // 1.) Get field input data
+        // 2. ) Add item to budget controller
+        // 3.) Add the item to the Interface
+        // 4.) Calculate the budget
+        // 5.) Display the budget
 
 
-var z =budgetCtrl.publicTest(5);
-return {
-    anotherPublicMethod: function (){
-        console.log(z);
+
     }
-}
+
+    document.querySelector(".add__btn").addEventListener('click',ctrlAddItem);
+
+
+
+    document.addEventListener('keypress', function(event){
+
+        if(event.keyCode === 13){
+            ctrlAddItem();
+        }
+
+
+    });
+
 
 
 }) (budgetController,UIController  );
